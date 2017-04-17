@@ -10,7 +10,7 @@
     </style>
 
     <!-- Base application theme. -->
-    <style name="Theme.DesignDemo" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="Theme.DesignDemo" parent="AppTheme">
         <!-- Customize your theme here. -->
     </style>
 

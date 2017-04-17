@@ -1,7 +1,9 @@
 package com.libt.sgoly.fragment.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,6 +15,7 @@ import android.widget.TextView;
 
 import com.libt.sgoly.AppConstant;
 import com.libt.sgoly.R;
+import com.libt.sgoly.activity.PublishMomentActivity;
 import com.libt.sgoly.adapter.MomentsAdapter;
 import com.libt.sgoly.db.Moments;
 
@@ -50,6 +53,14 @@ public class MomentsFragment extends Fragment {
             @Override
             public void onRefresh() {
                 refreshFruits();
+            }
+        });
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab_add_moment);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getActivity(), PublishMomentActivity.class);
+                startActivity(intent);
             }
         });
         return view;

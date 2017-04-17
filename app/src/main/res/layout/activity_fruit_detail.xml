@@ -16,8 +16,8 @@
             android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
@@ -25,15 +25,15 @@
                 android:id="@+id/fruit_image_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="centerCrop"
                 android:fitsSystemWindows="true"
-                app:layout_collapseMode="parallax" />
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax"/>
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin" />
+                app:layout_collapseMode="pin"/>
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
@@ -43,9 +43,9 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
@@ -59,8 +59,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:text="营养成分"/>
+                    android:text="营养成分"
+                    android:textStyle="bold"/>
+
                 <TextView
                     android:id="@+id/fruit_content_nutrients"
                     android:layout_width="match_parent"
@@ -68,7 +69,9 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_marginTop="25dp" />
+                    android:layout_marginTop="25dp"
+                    android:lineSpacingExtra="3dp"
+                    android:lineSpacingMultiplier="1.5"/>
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
@@ -83,8 +86,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:text="功效"/>
+                    android:text="功效"
+                    android:textStyle="bold"/>
+
                 <TextView
                     android:id="@+id/fruit_content_effect"
                     android:layout_width="match_parent"
@@ -92,8 +96,11 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_marginTop="25dp" />
+                    android:layout_marginTop="25dp"
+                    android:lineSpacingExtra="3dp"
+                    android:lineSpacingMultiplier="1.5"/>
             </android.support.v7.widget.CardView>
+
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -106,8 +113,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:text="营养价值"/>
+                    android:text="营养价值"
+                    android:textStyle="bold"/>
+
                 <TextView
                     android:id="@+id/fruit_content_value"
                     android:layout_width="match_parent"
@@ -115,8 +123,11 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_marginTop="25dp" />
+                    android:layout_marginTop="25dp"
+                    android:lineSpacingExtra="3dp"
+                    android:lineSpacingMultiplier="1.5"/>
             </android.support.v7.widget.CardView>
+
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -129,8 +140,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:text="健康指南"/>
+                    android:text="健康指南"
+                    android:textStyle="bold"/>
+
                 <TextView
                     android:id="@+id/fruit_content_health"
                     android:layout_width="match_parent"
@@ -138,8 +150,11 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_marginTop="25dp" />
+                    android:layout_marginTop="25dp"
+                    android:lineSpacingExtra="3dp"
+                    android:lineSpacingMultiplier="1.5"/>
             </android.support.v7.widget.CardView>
+
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -152,8 +167,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:text="早上空腹吃苹果好吗"/>
+                    android:text="早上空腹吃苹果好吗"
+                    android:textStyle="bold"/>
+
                 <TextView
                     android:id="@+id/fruit_content_question"
                     android:layout_width="match_parent"
@@ -161,8 +177,11 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_marginTop="25dp" />
+                    android:layout_marginTop="25dp"
+                    android:lineSpacingExtra="3dp"
+                    android:lineSpacingMultiplier="1.5"/>
             </android.support.v7.widget.CardView>
+
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -175,8 +194,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:text="历史"/>
+                    android:text="历史"
+                    android:textStyle="bold"/>
+
                 <TextView
                     android:id="@+id/fruit_content_history"
                     android:layout_width="match_parent"
@@ -184,16 +204,20 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_marginTop="25dp" />
+                    android:layout_marginTop="25dp"
+                    android:lineSpacingExtra="3dp"
+                    android:lineSpacingMultiplier="1.5"/>
             </android.support.v7.widget.CardView>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_add_collection"
+        app:backgroundTint="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:src="@drawable/common_collect_normal"
         app:layout_anchor="@id/appBar"
-        app:layout_anchorGravity="bottom|end" />
+        app:layout_anchorGravity="bottom|end"/>
 </android.support.design.widget.CoordinatorLayout>

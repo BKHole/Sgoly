@@ -27,8 +27,8 @@
 
     <android.support.design.widget.FloatingActionButton
         app:rippleColor="@color/colorPrimary"
-        app:backgroundTint="@color/colorAccent"
-        android:id="@+id/fab_add_comment"
+        app:backgroundTint="@color/white"
+        android:id="@+id/fab_add_moment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"

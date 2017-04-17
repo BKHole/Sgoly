@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical" android:layout_width="match_parent"
+              android:background="@drawable/login_img_bg"
+              android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+
+        android:id="@+id/login_bg"
+        android:padding="45dp"
+        android:layout_height="180dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_height="70dp"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/login_account_bg"
+            android:src="@drawable/login_username"
+            android:layout_height="wrap_content" />
+        <View
+            android:layout_width="1dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_height="match_parent"
+            android:background="@color/login_textcolor"  />
+        <EditText
+            android:hint="请用手机或者邮箱登录"
+            android:id="@+id/login_username"
+            android:textSize="16sp"
+            android:singleLine="true"
+            android:textColorHint="@color/login_textcolor"
+            android:textColor="@color/login_textcolor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_height="70dp"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/login_password_bg"
+            android:src="@drawable/login_password"
+            android:layout_height="wrap_content" />
+        <View
+            android:layout_width="1dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_height="match_parent"
+            android:background="@color/login_textcolor"  />
+        <EditText
+            android:hint="请输入密码"
+            android:singleLine="true"
+            android:id="@+id/login_password"
+            android:textSize="16sp"
+            android:inputType="textPassword"
+            android:textColorHint="@color/login_textcolor"
+            android:textColor="@color/login_textcolor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="忘记密码?"
+        android:id="@+id/login_findback"
+        android:layout_gravity="right"
+        android:textColor="@color/login_textcolor"
+        android:layout_marginRight="15dp"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:padding="30dp"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="140dp"
+            android:id="@+id/login_sign"
+            android:src="@drawable/selector_login_sign"
+            android:layout_marginRight="20dp"
+            android:layout_height="50dp" />
+        <ImageView
+            android:layout_width="140dp"
+            android:id="@+id/login_in"
+            android:src="@drawable/selector_login_in"
+            android:layout_height="50dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:textColor="#ecf24c"
+        android:id="@+id/login_scan"
+        android:layout_gravity="center_horizontal"
+        android:text="浏览看看"
+        android:gravity="center"
+
+        android:layout_height="40dp" />
+
+</LinearLayout>

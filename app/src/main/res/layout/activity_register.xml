@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical" android:layout_width="match_parent"
+              android:background="@drawable/sign_img_bg"
+              android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/sign_back"
+        android:layout_marginTop="40dp"
+        android:padding="5dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/selector_common_back"
+        android:layout_width="45dp"
+        android:layout_height="45dp" />
+
+    <LinearLayout
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_height="60dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="15sp"
+                android:paddingLeft="20dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/sign_textcolor"
+                android:text="账号"
+                android:layout_height="match_parent" />
+            <EditText
+                android:enabled="false"
+                android:singleLine="true"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:background="@null"
+                android:hint="请输入账号，手机号或者邮箱"
+                android:textColor="@color/sign_textcolor"
+                android:textSize="15sp"
+                android:textColorHint="@color/sign_text_hintcolor"
+                android:layout_height="45dp"
+                android:id="@+id/sign_phone" />
+        </LinearLayout>
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:orientation="horizontal"-->
+
+        <!--android:layout_height="50dp">-->
+
+        <!--<TextView-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:textSize="15sp"-->
+        <!--android:gravity="center_vertical|"-->
+        <!--android:paddingLeft="20dp"-->
+        <!--android:textColor="@color/sign_textcolor"-->
+        <!--android:text="验证码"-->
+        <!--android:layout_height="match_parent" />-->
+        <!--<EditText-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_weight="2"-->
+        <!--android:hint="短信验证码"-->
+        <!--android:background="@null"-->
+        <!--android:textColor="@color/sign_textcolor"-->
+        <!--android:textSize="15dp"-->
+        <!--android:textColorHint="@color/sign_text_hintcolor"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:id="@+id/sign_verify" />-->
+        <!--<ImageView-->
+        <!--android:layout_width="0dp"-->
+        <!--android:paddingRight="20dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:src="@drawable/selector_sign_verify"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/sign_get_verify" />-->
+        <!-- -->
+        <!--</LinearLayout>-->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="15sp"
+            android:paddingLeft="20dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/sign_textcolor"
+            android:text="密码"
+            android:layout_height="match_parent" />
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:singleLine="true"
+            android:hint="请输入登陆密码,至少6个字符"
+            android:textColor="@color/sign_textcolor"
+            android:textSize="15sp"
+            android:inputType="textPassword"
+            android:background="@null"
+            android:textColorHint="@color/sign_text_hintcolor"
+            android:layout_height="match_parent"
+            android:id="@+id/sign_password" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="15sp"
+            android:paddingLeft="20dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/sign_textcolor"
+            android:text="确认"
+            android:layout_height="match_parent" />
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:hint="请再次输入密码"
+            android:inputType="textPassword"
+            android:textColor="@color/sign_textcolor"
+            android:textSize="15sp"
+            android:singleLine="true"
+            android:background="@null"
+            android:textColorHint="@color/sign_text_hintcolor"
+            android:layout_height="match_parent"
+            android:id="@+id/sign_confirm_password" />
+    </LinearLayout>
+
+
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="同意注册协议"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:id="@+id/sign_up"
+        android:background="@drawable/selector_sign_up"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content" />
+</LinearLayout>

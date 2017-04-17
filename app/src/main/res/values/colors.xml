@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <color name="colorPrimary">#ff6666</color>
+    <color name="colorPrimaryDark">#ff6666</color>
+    <color name="colorAccent">#2AA9FE</color>
+
+
+    <!-- topic-->
+    <color name="topic">#2AA9FE</color>
+    <color name="normal_font">#666666</color>
+    <color name="normal_dark_font">#333333</color>
+    <color name="topic_red">#ff6666</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="light_black">#87333333</color>
+
+    <!-- tab-->
+    <color name="tab_bg_color">#ffffff</color>
+    <color name="tab_text_color_normal">#3b3b3b</color>
+    <color name="tab_text_color_checked">#ff6666</color>
+
+    <!-- title-->
+    <color name="title_bg_color">#111111</color>
+
+    <!-- chide-->
+    <color name="indicator_text">#3a3a3a</color>
+    <!-- chideDetail-->
+    <color name="chide_detail_step">#ff6666</color>
+    <color name="chide_detail_tip">#ff6666</color>
+    <color name="chide_detail_tip_normal">#333333</color>
+
+    <color name="chide_detail__small_step">#703a3a3a</color>
+
+    <!-- liaode-->
+
+    <!-- liaodeDetail-->
+
+    <!-- guangde-->
+
+    <!-- guangdeDetail-->
+
+    <!-- wode-->
+
+    <!-- mycookbook-->
+    <color name="mycookbook_time">#703a3a3a</color>
+    <color name="mycookbook_type">#3a3a3a</color>
+    <!-- wodeDetail-->
+
+
+    <!-- recommend-->
+    <color name="c1">#f0d356</color>
+    <color name="c2">#c8c8c8</color>
+    <color name="c3">#f88585</color>
+    <color name="c4">#d66e93</color>
+
+
+    <!-- login-->
+    <color name="login_textcolor">#f5f5f5</color>
+    <!-- sign-->
+    <color name="sign_textcolor">#333333</color>
+    <color name="sign_text_hintcolor">#666666</color>
+
+</resources>

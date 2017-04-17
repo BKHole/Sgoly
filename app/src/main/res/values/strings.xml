@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">水果乐园</string>
+    <string name="tab_leyuan">乐园</string>
+    <string name="tab_mine">我的</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

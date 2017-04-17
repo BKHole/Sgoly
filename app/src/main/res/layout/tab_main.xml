@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/ly_tab_menu"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/tab_height"
+              android:layout_alignParentBottom="true"
+              android:background="@drawable/shape_tab"
+              android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/ly_tab_fruit"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/tab_tv_fruit"
+                style="@style/tab_text_style"
+                android:drawableTop="@drawable/selector_tab_liaode"
+                android:text="@string/tab_leyuan"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_tab_finding"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/tab_iv_finding"
+            android:layout_width="33.5dp"
+            android:layout_height="40dp"
+            android:paddingBottom="4dp"
+            android:src="@drawable/selector_tab_recommend"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_tab_mine"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/tab_tv_mine"
+                style="@style/tab_text_style"
+                android:drawableTop="@drawable/selector_tab_wode"
+                android:text="@string/tab_mine"/>
+
+            <ImageView
+                android:id="@+id/tab_menu_wode_partner"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginLeft="-5dp"
+                android:layout_toRightOf="@id/tab_tv_mine"
+                android:src="@drawable/tab_text_xiaoxi"
+                android:visibility="invisible"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

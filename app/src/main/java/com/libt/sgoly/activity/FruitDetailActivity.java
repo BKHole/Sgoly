@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.libt.sgoly.R;
 
-public class FruitDetailActivity extends AppCompatActivity {
+public class FruitDetailActivity extends BaseActivity {
     public static final String FRUIT_NAME = "fruit_name";
 
     public static final String FRUIT_IMAGE_ID = "fruit_image_id";
@@ -62,6 +62,9 @@ public class FruitDetailActivity extends AppCompatActivity {
 
     }
 
+    private void init(){
+
+    }
     private String generateFruitContent(String fruitName) {
         StringBuilder fruitContent = new StringBuilder();
         for (int i = 0; i < 500; i++) {

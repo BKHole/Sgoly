@@ -2,12 +2,14 @@ package com.libt.sgoly.db;
 
 import org.litepal.crud.DataSupport;
 
+import cn.bmob.v3.BmobObject;
+
 /**
  * user表
  * Created by Administrator on 2017/4/12 0012.
  */
 
-public class User extends DataSupport {
+public class User extends BmobObject {
 
     private int user_id;
     private String username;

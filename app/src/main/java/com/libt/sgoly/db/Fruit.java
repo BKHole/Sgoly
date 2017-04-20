@@ -1,13 +1,14 @@
 package com.libt.sgoly.db;
 
-import org.litepal.crud.DataSupport;
+
+import cn.bmob.v3.BmobObject;
 
 /**
  * 水果表
  * Created by Administrator on 2017/4/12 0012.
  */
 
-public class Fruit extends DataSupport{
+public class Fruit extends BmobObject {
     private int id;
     private String name;
 

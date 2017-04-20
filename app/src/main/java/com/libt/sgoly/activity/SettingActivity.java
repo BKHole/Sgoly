@@ -1,15 +1,15 @@
 package com.libt.sgoly.activity;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import com.libt.sgoly.R;
 
-public class LoginActivity extends BaseActivity {
+public class SettingActivity extends Activity {
 
-    public static final String TAG = "LoginActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_setting);
     }
 }

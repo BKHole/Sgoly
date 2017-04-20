@@ -3,6 +3,5 @@
     <dbname value="Sgoly"></dbname>
     <version value="1"></version>
     <list>
-        <mapping class="com.libt.sgoly.db.User"/>
     </list>
 </litepal>

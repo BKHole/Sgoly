@@ -1,11 +1,10 @@
 package com.libt.sgoly.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.libt.sgoly.R;
 
-public class PublishMomentActivity extends AppCompatActivity {
+public class PublishMomentActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

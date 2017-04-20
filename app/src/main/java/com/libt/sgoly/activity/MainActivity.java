@@ -19,7 +19,7 @@ import com.libt.sgoly.fragment.main.MineFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     private ViewPager viewPager;
     private FragmentPagerAdapter pagerAdapter;

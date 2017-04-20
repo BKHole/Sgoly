@@ -2,12 +2,14 @@ package com.libt.sgoly.db;
 
 import java.sql.Date;
 
+import cn.bmob.v3.BmobObject;
+
 /**
  * 发现界面，动态表
  * Created by Administrator on 2017/4/14 0014.
  */
 
-public class Moments {
+public class Moments extends BmobObject {
     private int comments_id;
     private int user_id;
     private String nickname;

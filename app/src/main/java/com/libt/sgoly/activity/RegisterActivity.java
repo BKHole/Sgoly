@@ -7,6 +7,7 @@ import android.widget.ImageView;
 
 import com.libt.sgoly.R;
 import com.libt.sgoly.db.User;
+import com.libt.sgoly.manager.ActivityManager;
 
 import org.kymjs.kjframe.http.HttpCallBack;
 import org.kymjs.kjframe.ui.ViewInject;
@@ -56,7 +57,7 @@ public class RegisterActivity extends BaseActivity {
         public void onClick(View view) {
             switch (view.getId()){
                 case R.id.sign_back:
-                    RegisterActivity.this.finish();
+                    ActivityManager.finishAll();//退出程序
                     break;
                 case R.id.sign_up:
                     register();

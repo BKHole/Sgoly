@@ -113,7 +113,7 @@
             android:background="@null"
             android:hint="请输入登陆密码,至少6个字符"
             android:inputType="textPassword"
-            android:singleLine="true"
+            android:maxLines="1"
             android:textColor="@color/sign_textcolor"
             android:textColorHint="@color/sign_text_hintcolor"
             android:textSize="15sp"/>

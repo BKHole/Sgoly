@@ -24,7 +24,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.StartActivity">
+        <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -33,12 +33,9 @@
         </activity>
         <activity
             android:name=".activity.MainActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask"/>
-
-        <activity
-            android:name=".activity.LoginActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
+
         <activity
             android:name=".activity.RegisterActivity"
             android:screenOrientation="portrait"/>
@@ -50,8 +47,9 @@
             android:name=".activity.PublishMomentActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".activity.SettingActivity"
-                  android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.SettingActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

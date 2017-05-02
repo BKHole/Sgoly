@@ -7,12 +7,15 @@ import android.view.Menu;
 import android.widget.Toast;
 
 import com.libt.sgoly.AppConstant;
+import com.libt.sgoly.R;
 import com.libt.sgoly.manager.ActivityManager;
+import com.libt.sgoly.util.Accompaniment;
 
 import cn.bmob.v3.Bmob;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
+    public Accompaniment accompaniment = new Accompaniment(this, R.raw.tag_inventoried);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
@@ -20,6 +23,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         // 初始化 Bmob SDK
         // 使用时请将第二个参数Application ID替换成你在Bmob服务器端创建的Application ID
         Bmob.initialize(this, AppConstant.Bmob_APPID);
+        accompaniment.init();
         ActivityManager.addActivity(this);
     }
 

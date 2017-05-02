@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import com.libt.sgoly.R;
 import com.libt.sgoly.db.User;
 import com.libt.sgoly.manager.ActivityManager;
+import com.libt.sgoly.manager.UIManager;
 
 import org.kymjs.kjframe.http.HttpCallBack;
 import org.kymjs.kjframe.ui.ViewInject;
@@ -57,9 +58,10 @@ public class RegisterActivity extends BaseActivity {
         public void onClick(View view) {
             switch (view.getId()){
                 case R.id.sign_back:
-                    ActivityManager.finishAll();//退出程序
+                    RegisterActivity.this.finish();
                     break;
                 case R.id.sign_up:
+                    accompaniment.start();
                     register();
                     break;
             }
@@ -90,6 +92,7 @@ public class RegisterActivity extends BaseActivity {
                 public void done(String objectId,BmobException e) {
                     if(e==null){
                         showToast("注册成功，返回objectId为："+objectId);
+                        UIManager.showLogin(RegisterActivity.this);
                     }else{
                         showToast("注册失败：" + e.getMessage());
                     }

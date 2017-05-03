@@ -3,7 +3,6 @@ package com.libt.sgoly.activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -13,9 +12,8 @@ import com.libt.sgoly.R;
 import com.libt.sgoly.db.User;
 import com.libt.sgoly.manager.UIManager;
 
-import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.QueryListener;
+import cn.bmob.v3.listener.SaveListener;
 
 
 public class LoginActivity extends BaseActivity {
@@ -67,6 +65,7 @@ public class LoginActivity extends BaseActivity {
         @Override
         public void onClick(View view) {
             if (view == login) {
+                accompaniment.start();
                 login();
             } else if (view == scan) {
                 showToast("有待开发");
@@ -90,32 +89,24 @@ public class LoginActivity extends BaseActivity {
             return;
         } else {
             dialog.show();
-            queryPersonByUsername(name, password);
-        }
-    }
-
-    private void queryPersonByUsername(String username, final String password) {
-        BmobQuery<User> bmobQuery = new BmobQuery<>();
-        bmobQuery.addWhereEqualTo("username", username);
-        bmobQuery.getObject(username, new QueryListener<User>() {
-            @Override
-            public void done(User user, BmobException e) {
-                if(e==null){
-                    if(user.getPassword().equals(password)){
+            User user=new User();
+            user.setUsername(name);
+            user.setPassword(password);
+            user.login(new SaveListener<User>() {
+                @Override
+                public void done(User user, BmobException e) {
+                    if (e == null) {
+                        showToast("登录成功");
+                        dialog.dismiss();
                         UIManager.showMain(LoginActivity.this);
-                        dialog.dismiss();
                         LoginActivity.this.finish();
-                    }else{
-                        showToast("登录密码错误！");
+                    } else {
                         dialog.dismiss();
+                        showToast("登录失败：" + e.getMessage());
                     }
-                }else{
-                    Log.i("bmob","失败："+e.getMessage()+","+e.getErrorCode());
-                    showToast("用户不存在，请注册");
-                    dialog.dismiss();
                 }
-            }
-        });
+            });
+        }
     }
 
 }

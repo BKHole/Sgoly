@@ -1,5 +1,6 @@
 package com.libt.sgoly.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -58,6 +59,7 @@ public class RegisterActivity extends BaseActivity {
         public void onClick(View view) {
             switch (view.getId()){
                 case R.id.sign_back:
+                    accompaniment.start();
                     RegisterActivity.this.finish();
                     break;
                 case R.id.sign_up:
@@ -87,17 +89,19 @@ public class RegisterActivity extends BaseActivity {
             User user=new User();
             user.setUsername(phone);
             user.setPassword(password);
-            user.save(new SaveListener<String>() {
+            user.signUp(new SaveListener<User>() {
                 @Override
-                public void done(String objectId,BmobException e) {
-                    if(e==null){
-                        showToast("注册成功，返回objectId为："+objectId);
+                public void done(User s, BmobException e) {
+                    if (e == null) {
+                        showToast("注册成功，返回objectId为：" + s.getObjectId());
                         UIManager.showLogin(RegisterActivity.this);
-                    }else{
+                        RegisterActivity.this.finish();
+                    } else {
                         showToast("注册失败：" + e.getMessage());
                     }
                 }
             });
+
         } else {
             showToast("密码不一致");
         }

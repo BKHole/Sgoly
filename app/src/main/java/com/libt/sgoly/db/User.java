@@ -1,48 +1,21 @@
 package com.libt.sgoly.db;
 
-import org.litepal.crud.DataSupport;
-
-import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.BmobUser;
+import cn.bmob.v3.datatype.BmobFile;
 
 /**
  * user表
  * Created by Administrator on 2017/4/12 0012.
  */
 
-public class User extends BmobObject {
+public class User extends BmobUser {
 
-    private int user_id;
-    private String username;
-    private String password;
-    private String nickname;
-    private String avatar;
-    private String sex;
-    private String birth;
-    private String motto;
-    private String address;
-
-    public int getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
-    }
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    private String nickname;//昵称
+    private BmobFile avatar;//头像
+    private String sex;//性别
+    private String birth;//生日
+    private String motto;//个性签名
+    private String address;//地址
 
     public String getNickname() {
         return nickname;
@@ -50,14 +23,6 @@ public class User extends BmobObject {
 
     public void setNickname(String nickname) {
         this.nickname = nickname;
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
     }
 
     public String getSex() {
@@ -90,5 +55,13 @@ public class User extends BmobObject {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public BmobFile getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(BmobFile avatar) {
+        this.avatar = avatar;
     }
 }

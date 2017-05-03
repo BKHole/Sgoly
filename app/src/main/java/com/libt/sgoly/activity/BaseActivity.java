@@ -14,6 +14,7 @@ import com.libt.sgoly.util.Accompaniment;
 import cn.bmob.v3.Bmob;
 
 public abstract class BaseActivity extends AppCompatActivity {
+    Toast mToast;
 
     public Accompaniment accompaniment = new Accompaniment(this, R.raw.tag_inventoried);
     @Override
@@ -26,8 +27,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         accompaniment.init();
         ActivityManager.addActivity(this);
     }
-
-    Toast mToast;
 
     public void showToast(String text) {
         if (!TextUtils.isEmpty(text)) {

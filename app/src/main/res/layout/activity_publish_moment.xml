@@ -10,17 +10,15 @@
         android:background="@drawable/shape_title">
 
         <ImageView
-            android:id="@+id/title_img_back"
+            android:id="@+id/moments_img_back"
             style="@style/titlebar_img"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="8dp"
             android:contentDescription="@null"
             android:src="@drawable/selector_common_back"/>
 
         <TextView
-            android:id="@+id/title_text_title"
+            android:id="@+id/moments_text_title"
             style="@style/titlebar_text"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

@@ -5,19 +5,21 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.libt.sgoly.R;
-import com.libt.sgoly.fragment.main.MomentsFragment;
 import com.libt.sgoly.fragment.main.FruitFragment;
 import com.libt.sgoly.fragment.main.MineFragment;
+import com.libt.sgoly.fragment.main.MomentsFragment;
+import com.libt.sgoly.manager.ActivityManager;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class MainActivity extends BaseActivity implements View.OnClickListener{
 
@@ -136,4 +138,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
         }
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
+            ActivityManager.exitBy2Click(this);
+        }
+        return false;
+    }
+
+
 }

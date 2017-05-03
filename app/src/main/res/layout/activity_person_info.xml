@@ -5,31 +5,7 @@
               android:background="@color/mine_gray"
               android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/title_height"
-        android:background="@drawable/shape_title">
-
-        <ImageView
-            android:id="@+id/profile_img_back"
-            style="@style/titlebar_img"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="8dp"
-            android:contentDescription="@null"
-            android:src="@drawable/selector_common_back"/>
-
-        <TextView
-            android:id="@+id/profile_text_title"
-            style="@style/titlebar_text"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="35dp"
-            android:layout_marginRight="35dp"
-            android:maxLines="1"
-            android:text="个人信息"
-            android:textColor="@color/topic_red"/>
-    </RelativeLayout>
+    <include layout="@layout/tab_title"/>
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -48,9 +48,13 @@
         <activity
             android:name=".activity.SettingActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".activity.CollectionActivity">
+        <activity
+            android:name=".activity.CollectionActivity"
+            android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".activity.PersonInfoActivity">
+        <activity
+            android:name=".activity.PersonInfoActivity"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

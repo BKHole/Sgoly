@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/mine_gray"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@drawable/shape_title">
+
+        <ImageView
+            android:id="@+id/profile_img_back"
+            style="@style/titlebar_img"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="8dp"
+            android:contentDescription="@null"
+            android:src="@drawable/selector_common_back"/>
+
+        <TextView
+            android:id="@+id/profile_text_title"
+            style="@style/titlebar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:maxLines="1"
+            android:text="个人信息"
+            android:textColor="@color/topic_red"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/setting_editinfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_vertical"
+                android:text="头像"
+                android:textColor="#333333"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:layout_width="86dp"
+                android:layout_height="86dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/object"/>
+        </RelativeLayout>
+
+        <View style="@style/line"/>
+
+        <RelativeLayout
+            android:id="@+id/setting_modify_password"
+            style="@style/setting_layout">
+
+            <TextView
+                style="@style/profile_text_left"
+                android:text="昵称"/>
+
+            <TextView
+                style="@style/profile_text_right"
+                android:text="哈哈"/>
+        </RelativeLayout>
+
+        <View style="@style/line"/>
+
+        <RelativeLayout
+            style="@style/setting_layout">
+
+            <TextView
+                style="@style/profile_text_left"
+                android:text="生日"/>
+
+            <TextView
+                style="@style/profile_text_right"
+                android:text="哈哈"/>
+        </RelativeLayout>
+
+        <View style="@style/line"/>
+
+        <RelativeLayout
+            style="@style/setting_layout">
+
+            <TextView
+                style="@style/profile_text_left"
+                android:text="地区"/>
+
+            <TextView
+                style="@style/profile_text_right"
+                android:text="哈哈"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            style="@style/setting_layout">
+
+            <TextView
+                style="@style/profile_text_left"
+                android:text="性别"/>
+
+            <TextView
+                style="@style/profile_text_right"
+                android:text="哈哈"/>
+        </RelativeLayout>
+
+        <View style="@style/line"/>
+
+        <RelativeLayout
+            style="@style/setting_layout">
+
+            <TextView
+                style="@style/profile_text_left"
+                android:text="地区"/>
+
+            <TextView
+                style="@style/profile_text_right"
+                android:text="哈哈"/>
+        </RelativeLayout>
+
+        <View style="@style/line"/>
+
+        <RelativeLayout
+            style="@style/setting_layout">
+
+            <TextView
+                style="@style/profile_text_left"
+                android:text="个性签名"/>
+
+            <TextView
+                style="@style/profile_text_right"
+                android:text="哈哈"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -42,7 +42,7 @@
     <!-- guangdeDetail-->
 
     <!-- wode-->
-
+    <color name="mine_gray">#E8E8E8</color>
     <!-- mycookbook-->
     <color name="mycookbook_time">#703a3a3a</color>
     <color name="mycookbook_type">#3a3a3a</color>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:background="@color/mine_gray"
               android:orientation="vertical">
 
     <include layout="@layout/tab_title"/>
 
     <android.support.v7.widget.CardView
+        android:id="@+id/mine_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        app:cardCornerRadius="4dp">
+        android:layout_marginTop="20dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:paddingBottom="20dp">
 
             <ImageView
-                android:id="@+id/moments_avatar"
+                android:id="@+id/mine_avatar"
                 android:layout_width="86dp"
                 android:layout_height="86dp"
                 android:layout_alignParentLeft="true"
@@ -33,12 +33,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
-                android:layout_toRightOf="@+id/moments_avatar"
+                android:layout_toRightOf="@+id/mine_avatar"
                 android:orientation="vertical"
                 android:padding="1dp">
 
                 <TextView
-                    android:id="@+id/moments_nickname"
+                    android:id="@+id/mine_nickname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
@@ -48,7 +48,7 @@
                     android:textSize="13sp"/>
 
                 <TextView
-                    android:id="@+id/moments_content"
+                    android:id="@+id/mine_motto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
@@ -56,31 +56,22 @@
                     android:textSize="13sp"/>
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/go"
-                android:layout_width="17dp"
-                android:layout_height="17dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="40dp"
-                android:background="@drawable/common_goto"/>
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
     <LinearLayout
-
-        android:id="@+id/wode_cookbook_layout"
+        android:id="@+id/mine_material"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
+            android:layout_marginLeft="20dp"
             android:background="@drawable/wode_cookbook"/>
 
         <TextView
@@ -90,36 +81,23 @@
             android:gravity="center_vertical"
             android:text="我的材料"
             android:textColor="#333333"
-            android:textSize="14sp" />
-
-        <ImageView
-            android:layout_width="17dp"
-            android:layout_height="17dp"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/common_goto"/>
+            android:textSize="14sp"/>
 
     </LinearLayout>
 
-    <View
-        style="@style/line"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp"
-        />
-
     <LinearLayout
-        android:id="@+id/wode_collect_layout"
+        android:id="@+id/mine_collection"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_height="50dp"
         android:layout_marginTop="10dp"
+        android:background="@color/white"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
+            android:layout_marginLeft="20dp"
             android:background="@drawable/wode_collect"/>
 
         <TextView
@@ -132,33 +110,22 @@
             android:textSize="14sp"
             />
 
-        <ImageView
-            android:layout_width="17dp"
-            android:layout_height="17dp"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/common_goto"/>
 
     </LinearLayout>
 
-    <View
-        style="@style/line"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp"
-        />
     <LinearLayout
-        android:id="@+id/wode_setting"
+        android:id="@+id/mine_setting"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_height="50dp"
         android:layout_marginTop="10dp"
+        android:background="@color/white"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
+            android:layout_marginLeft="20dp"
             android:background="@drawable/title_setting_checked"/>
 
         <TextView
@@ -168,21 +135,7 @@
             android:gravity="center_vertical"
             android:text="设置"
             android:textColor="#333333"
-            android:textSize="14sp"
-            />
-
-        <ImageView
-            android:layout_width="17dp"
-            android:layout_height="17dp"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/common_goto"/>
-
+            android:textSize="14sp"/>
     </LinearLayout>
 
-    <View
-        style="@style/line"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp"
-        />
 </LinearLayout>

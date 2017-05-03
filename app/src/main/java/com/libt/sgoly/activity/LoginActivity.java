@@ -24,7 +24,7 @@ public class LoginActivity extends BaseActivity {
     private EditText loginPassword;
     private ImageView login;
     private TextView scan;
-    private TextView findback;
+    private TextView findBack;
     private ImageView sign;
     private ImageView mLayoutBg;
     private ImageView mAccountBg;
@@ -47,7 +47,7 @@ public class LoginActivity extends BaseActivity {
         loginPassword= (EditText) findViewById(R.id.login_password);
         login= (ImageView) findViewById(R.id.login_in);
         scan= (TextView) findViewById(R.id.login_scan);
-        findback= (TextView) findViewById(R.id.login_findback);
+        findBack= (TextView) findViewById(R.id.login_findback);
         sign= (ImageView) findViewById(R.id.login_sign);
 
         dialog = new ProgressDialog(this);
@@ -56,7 +56,7 @@ public class LoginActivity extends BaseActivity {
 
         login.setOnClickListener(clickListener);
         scan.setOnClickListener(clickListener);
-        findback.setOnClickListener(clickListener);
+        findBack.setOnClickListener(clickListener);
         sign.setOnClickListener(clickListener);
 
     }
@@ -68,8 +68,10 @@ public class LoginActivity extends BaseActivity {
                 accompaniment.start();
                 login();
             } else if (view == scan) {
-                showToast("有待开发");
-            } else if (view == findback) {
+                //showToast("有待开发");
+                UIManager.showMain(LoginActivity.this);
+                LoginActivity.this.finish();
+            } else if (view == findBack) {
                 showToast("有待开发");
             } else if (view == sign) {
                 UIManager.showRegister(LoginActivity.this);

@@ -35,7 +35,6 @@
             android:name=".activity.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
-
         <activity
             android:name=".activity.RegisterActivity"
             android:screenOrientation="portrait"/>
@@ -46,10 +45,13 @@
         <activity
             android:name=".activity.PublishMomentActivity"
             android:screenOrientation="portrait"/>
-
         <activity
             android:name=".activity.SettingActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".activity.CollectionActivity">
+        </activity>
+        <activity android:name=".activity.PersonInfoActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -16,7 +16,7 @@
         android:orientation="vertical">
 
         <RelativeLayout
-            android:id="@+id/setting_editinfo"
+            android:id="@+id/setting_edit_info"
             style="@style/setting_layout">
 
             <ImageView
@@ -61,7 +61,7 @@
         android:orientation="vertical">
 
         <RelativeLayout
-            android:id="@+id/setting_clear"
+            android:id="@+id/setting_clear_cache"
             style="@style/setting_layout">
 
             <ImageView

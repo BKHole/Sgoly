@@ -70,7 +70,7 @@
             android:layout_height="match_parent"
             android:layout_weight="3"
             android:background="@null"
-            android:hint="请输入登陆密码,至少6位"
+            android:hint="请输入登录密码,至少6位"
             android:inputType="textPassword"
             android:maxLines="1"
             android:textColor="@color/sign_textcolor"

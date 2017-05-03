@@ -7,6 +7,7 @@ import com.libt.sgoly.activity.CollectionActivity;
 import com.libt.sgoly.activity.FruitDetailActivity;
 import com.libt.sgoly.activity.LoginActivity;
 import com.libt.sgoly.activity.MainActivity;
+import com.libt.sgoly.activity.ModifyPasswordActivity;
 import com.libt.sgoly.activity.PersonInfoActivity;
 import com.libt.sgoly.activity.PublishMomentActivity;
 import com.libt.sgoly.activity.RegisterActivity;
@@ -96,6 +97,16 @@ public class UIManager {
      */
     public static void showCollection(Context context) {
         Intent intent = new Intent(context, CollectionActivity.class);
+        context.startActivity(intent);
+    }
+
+    /**
+     * 显示修改密码
+     *
+     * @param context
+     */
+    public static void showModifyPassword(Context context) {
+        Intent intent = new Intent(context, ModifyPasswordActivity.class);
         context.startActivity(intent);
     }
 }

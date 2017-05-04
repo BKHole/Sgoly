@@ -7,19 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.libt.sgoly.AppConstant;
 import com.libt.sgoly.R;
 import com.libt.sgoly.db.Moments;
 
 import java.util.List;
-import java.util.Random;
-
-import static org.litepal.LitePalApplication.getContext;
 
 /**
  * 发现界面动态适配器

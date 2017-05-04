@@ -33,14 +33,6 @@
 
     <color name="chide_detail__small_step">#703a3a3a</color>
 
-    <!-- liaode-->
-
-    <!-- liaodeDetail-->
-
-    <!-- guangde-->
-
-    <!-- guangdeDetail-->
-
     <!-- wode-->
     <color name="mine_gray">#E8E8E8</color>
     <!-- mycookbook-->
@@ -62,4 +54,25 @@
     <color name="sign_textcolor">#333333</color>
     <color name="sign_text_hintcolor">#666666</color>
 
+    <color name="bottom_tab_bg">#EBEBEB</color>
+    <color name="color_background">#EBEBEB</color>
+    <color name="button_default">#4c4d51</color>
+    <color name="button_pressed">#58585c</color>
+
+    <!-- bottom navigation start-->
+    <color name="color_nav_default">#3E4757</color>
+    <color name="color_nav_pressed">#FF4081</color>
+    <!-- bottom navigation end-->
+
+    <color name="base_color">#393A3F</color>
+    <color name="color_white">#ffffff</color>
+    <color name="color_black">#000000</color>
+
+    <!-- 透明色-->
+    <color name="transparent">#00000000</color>
+    <color name="color_border">#66666666</color>
+
+    <color name="clr_main_text">#000000</color>
+    <color name="clr_sub_text">#b4af96</color>
+    <color name="clr_form_line">#80808069</color>
 </resources>

@@ -5,7 +5,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.libt.sgoly.R;
 import com.libt.sgoly.db.User;
@@ -14,13 +13,8 @@ import com.libt.sgoly.manager.UIManager;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UpdateListener;
-
-import static android.R.attr.password;
-import static org.kymjs.kjframe.ui.ViewInject.toast;
 
 public class ModifyPasswordActivity extends BaseActivity {
 
@@ -70,7 +64,7 @@ public class ModifyPasswordActivity extends BaseActivity {
         newPassword = editNewPassword.getText().toString().trim();
         confirmNewPassword = editConfirmPassword.getText().toString().trim();
         if(newPassword.length()< 6){
-            toast("密码不能小于6位");
+            showToast("密码不能小于6位");
             return;
         }
 
@@ -86,6 +80,7 @@ public class ModifyPasswordActivity extends BaseActivity {
                 public void done(BmobException e) {
                     if (e == null) {
                         showToast("密码修改成功" );
+                        UIManager.showLogin(ModifyPasswordActivity.this);
                         ModifyPasswordActivity.this.finish();
                     } else {
                         showToast("密码修改失败：" + e.getMessage());

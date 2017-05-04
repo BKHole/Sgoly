@@ -19,7 +19,6 @@ import com.libt.sgoly.R;
 
 public class FruitDetailActivity extends BaseActivity {
     public static final String FRUIT_NAME = "fruit_name";
-
     public static final String FRUIT_IMAGE_ID = "fruit_image_id";
 
     @Override
@@ -28,7 +27,7 @@ public class FruitDetailActivity extends BaseActivity {
         setContentView(R.layout.activity_fruit_detail);
         Intent intent = getIntent();
         String fruitName = intent.getStringExtra(FRUIT_NAME);
-        int fruitImageId = intent.getIntExtra(FRUIT_IMAGE_ID, 0);
+        int fruitImageId = intent.getIntExtra(FRUIT_IMAGE_ID,0);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         ImageView fruitImageView = (ImageView) findViewById(R.id.fruit_image_view);
@@ -62,9 +61,6 @@ public class FruitDetailActivity extends BaseActivity {
 
     }
 
-    private void init(){
-
-    }
     private String generateFruitContent(String fruitName) {
         StringBuilder fruitContent = new StringBuilder();
         for (int i = 0; i < 500; i++) {

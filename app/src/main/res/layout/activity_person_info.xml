@@ -76,7 +76,7 @@
 
             <TextView
                 style="@style/profile_text_left"
-                android:text="地区"/>
+                android:text="我的地址"/>
 
             <TextView
                 style="@style/profile_text_right"

@@ -15,8 +15,6 @@ import java.util.regex.Pattern;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 
-import static org.kymjs.kjframe.ui.ViewInject.toast;
-
 public class RegisterActivity extends BaseActivity {
 
     private ImageView back;
@@ -69,7 +67,7 @@ public class RegisterActivity extends BaseActivity {
         password = editPassword.getText().toString().trim();
         confirmPassword = editConfirmPassword.getText().toString().trim();
         if(password.length() < 6){
-            toast("密码不能小于6位");
+            showToast("密码不能小于6位");
             return;
         }
 

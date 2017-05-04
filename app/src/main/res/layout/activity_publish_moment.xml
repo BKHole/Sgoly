@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:background="@color/mine_gray"
               android:orientation="vertical">
 
     <RelativeLayout
@@ -18,7 +19,6 @@
             android:src="@drawable/selector_common_back"/>
 
         <TextView
-            android:id="@+id/moments_text_title"
             style="@style/titlebar_text"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -38,27 +38,53 @@
             android:text="发布"/>
     </RelativeLayout>
 
-    <android.support.v7.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
+    <LinearLayout
+        style="@style/w_match_h_match"
         android:layout_marginTop="20dp"
-        app:cardCornerRadius="4dp">
+        android:orientation="vertical">
 
         <EditText
+            android:id="@+id/et_content"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@null"
-            android:hint="说点什么。。。"
-            android:inputType="textPassword"
-            android:minEms="3"
-            android:textColor="@color/sign_textcolor"
-            android:textColorHint="@color/sign_text_hintcolor"
-            android:textSize="16sp"/>
+            android:layout_height="@dimen/dimen_person_edit_height"
+            android:background="@color/color_white"
+            android:padding="10dp"
+            android:gravity="left|top"
+            android:hint="这一刻的想法..."
+            android:inputType="textMultiLine"
+            android:maxLength="64"
+            android:textColor="@color/clr_sub_text"
+            android:textColorHint="@color/clr_sub_text"
+            android:textSize="@dimen/dimen_small_text_size"/>
 
-    </android.support.v7.widget.CardView>
+        <TextView
+            android:id="@+id/tv_tip"
+            style="@style/w_match_h_wrap"
+            android:background="@color/color_white"
+            android:layout_marginRight="@dimen/dimen_tiny_text_size"
+            android:gravity="right"
+            android:text="0/64"/>
+
+        <LinearLayout
+            style="@style/w_match_h_wrap"
+            android:layout_height="100dp"
+            android:background="@drawable/shape_bk"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:id="@+id/layout_img"
+                style="@style/w_wrap_h_wrap"
+                android:orientation="horizontal"/>
+
+            <ImageView
+                android:id="@+id/img_plus"
+                style="@style/w_wrap_h_wrap"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="13dp"
+                android:src="@drawable/plus"/>
+
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

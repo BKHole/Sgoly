@@ -1,7 +1,5 @@
 package com.libt.sgoly.db;
 
-import java.sql.Date;
-
 import cn.bmob.v3.BmobObject;
 
 /**

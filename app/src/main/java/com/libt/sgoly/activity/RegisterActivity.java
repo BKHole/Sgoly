@@ -1,6 +1,5 @@
 package com.libt.sgoly.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -8,12 +7,7 @@ import android.widget.ImageView;
 
 import com.libt.sgoly.R;
 import com.libt.sgoly.db.User;
-import com.libt.sgoly.manager.ActivityManager;
 import com.libt.sgoly.manager.UIManager;
-
-import org.kymjs.kjframe.http.HttpCallBack;
-import org.kymjs.kjframe.ui.ViewInject;
-import org.kymjs.kjframe.utils.KJLoger;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

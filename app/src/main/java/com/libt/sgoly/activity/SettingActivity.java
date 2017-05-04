@@ -7,6 +7,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.libt.sgoly.R;
+import com.libt.sgoly.manager.ActivityManager;
 import com.libt.sgoly.manager.UIManager;
 
 public class SettingActivity extends BaseActivity {
@@ -63,6 +64,17 @@ public class SettingActivity extends BaseActivity {
                 UIManager.showPersonalInfo(SettingActivity.this);
             } else if (view == modifyPassword) {
                 UIManager.showModifyPassword(SettingActivity.this);
+            }else if (view==clearCache){
+
+            }else if (view== feedBack){
+
+            }else if (view==update){
+
+            }else if (view==about){
+
+            }else if (view==loginOut){
+                ActivityManager.finishAll();
+                //User.logOut();
             }
         }
     };

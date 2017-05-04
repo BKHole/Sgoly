@@ -2,6 +2,8 @@ package com.libt.sgoly.db;
 
 
 import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.datatype.BmobFile;
+
 
 /**
  * 水果表
@@ -9,19 +11,20 @@ import cn.bmob.v3.BmobObject;
  */
 
 public class Fruit extends BmobObject {
-    private int id;
     private String name;
+    private BmobFile picture;
+
+    public BmobFile getPicture() {
+        return picture;
+    }
+
+    public void setPicture(BmobFile picture) {
+        this.picture = picture;
+    }
 
     public Fruit(String name, int imageId) {
         this.name = name;
         this.imageId = imageId;
-    }
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {

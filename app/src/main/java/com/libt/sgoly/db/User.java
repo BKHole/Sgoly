@@ -12,7 +12,7 @@ public class User extends BmobUser {
 
     private String nickname;//昵称
     private BmobFile avatar;//头像
-    private String sex;//性别
+    private Boolean sex;//性别
     private String birth;//生日
     private String motto;//个性签名
     private String address;//地址
@@ -25,11 +25,11 @@ public class User extends BmobUser {
         this.nickname = nickname;
     }
 
-    public String getSex() {
+    public Boolean getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex(Boolean sex) {
         this.sex = sex;
     }
 

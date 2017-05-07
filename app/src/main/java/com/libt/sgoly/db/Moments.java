@@ -1,6 +1,7 @@
 package com.libt.sgoly.db;
 
 import cn.bmob.v3.BmobObject;
+import cn.bmob.v3.datatype.BmobFile;
 
 /**
  * 发现界面，动态表
@@ -8,62 +9,18 @@ import cn.bmob.v3.BmobObject;
  */
 
 public class Moments extends BmobObject {
-    private int comments_id;
-    private int user_id;
-    private String nickname;
-    private int avatarId;//头像id
-    private int imageId;//图片id
-    private String content;//发布内容
-    private String date;
-    private int status;//点赞的状态
+    private User author;
+    private String content;// 内容
+    private BmobFile img;// 图片
+    private String location;//地理位置
+    private Boolean status;//点赞的状态
 
-    public Moments(String nickname, int avatarId, String content, int imageId, String date, int status) {
-        this.nickname = nickname;
-        this.avatarId = avatarId;
-        this.content = content;
-        this.imageId=imageId;
-        this.date = date;
-        this.status = status;
+    public User getAuthor() {
+        return author;
     }
 
-    public int getComments_id() {
-        return comments_id;
-    }
-
-    public void setComments_id(int comments_id) {
-        this.comments_id = comments_id;
-    }
-
-    public int getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-    public int getAvatarId() {
-        return avatarId;
-    }
-
-    public void setAvatarId(int avatarId) {
-        this.avatarId = avatarId;
-    }
-
-    public int getImageId() {
-        return imageId;
-    }
-
-    public void setImageId(int imageId) {
-        this.imageId = imageId;
+    public void setAuthor(User author) {
+        this.author = author;
     }
 
     public String getContent() {
@@ -74,19 +31,27 @@ public class Moments extends BmobObject {
         this.content = content;
     }
 
-    public String getDate() {
-        return date;
+    public BmobFile getImg() {
+        return img;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setImg(BmobFile img) {
+        this.img = img;
     }
 
-    public int getStatus() {
+    public Boolean getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(Boolean status) {
         this.status = status;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

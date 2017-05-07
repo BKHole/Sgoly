@@ -4,11 +4,16 @@ import android.app.Activity;
 import android.widget.Toast;
 
 import com.libt.sgoly.AppContext;
+import com.libt.sgoly.db.User;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import cn.bmob.v3.BmobUser;
+
+import static cn.bmob.v3.BmobUser.logOut;
 
 /**
  * 活动管理器
@@ -53,6 +58,7 @@ public class ActivityManager {
             }, 2000);
 
         } else {
+            User.logOut();
             finishAll();
         }
     }

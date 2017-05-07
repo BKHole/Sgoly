@@ -27,7 +27,7 @@ public class FruitDetailActivity extends BaseActivity {
         setContentView(R.layout.activity_fruit_detail);
         Intent intent = getIntent();
         String fruitName = intent.getStringExtra(FRUIT_NAME);
-        int fruitImageId = intent.getIntExtra(FRUIT_IMAGE_ID,0);
+        String fruitImageId = intent.getStringExtra(FRUIT_IMAGE_ID);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         ImageView fruitImageView = (ImageView) findViewById(R.id.fruit_image_view);

@@ -1,105 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    app:cardCornerRadius="4dp">
+<LinearLayout style="@style/w_match_h_wrap"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:paddingBottom="8dp"
+              android:paddingLeft="16dp"
+              android:paddingRight="16dp"
+              android:paddingTop="8dp">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="20dp">
+        style="@style/w_match_h_wrap"
+        android:layout_height="40dp"
+        android:paddingBottom="3dp">
 
-        <ImageView
-            android:id="@+id/moments_avatar"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="5dp"
-            android:scaleType="centerInside"
-            android:padding="1dp"
             android:src="@drawable/default_avatar"/>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@+id/moments_avatar"
+            style="@style/w_match_h_match"
+            android:layout_toRightOf="@+id/iv_avatar"
             android:orientation="vertical"
-            android:padding="1dp">
+            android:paddingLeft="10dp">
 
-            <TextView
-                android:id="@+id/moments_nickname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerVertical="true"
-                android:text="zhangphil"
-                android:textColor="@color/topic_red"
-                android:textSize="13sp"
-                android:textStyle="bold"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dip"
-                android:background="#EFEFEF"
-                android:padding="1dp"/>
-
-            <TextView
-                android:id="@+id/moments_content"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dip"
-                android:textColor="@color/black"
-                android:textSize="13sp"/>
-
-            <!--<TableLayout-->
-                <!--android:id="@+id/tab_layout"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:shrinkColumns="0,1,2"/>-->
-            <ImageView
-                android:id="@+id/moments_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="5dip"
-                android:adjustViewBounds="true"
-                android:maxHeight="150dp"
-                android:maxWidth="150dp"/>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="1dp">
+            <LinearLayout
+                style="@style/h_weight_w_match"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
 
                 <TextView
-                    android:id="@+id/moments_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:text="2015-09-15"
-                    android:textSize="10sp"/>
+                    android:id="@+id/tv_author"
+                    style="@style/w_wrap_h_match"
+                    android:gravity="center_vertical"
+                    android:text="zhangsan"
+                    android:textSize="13sp"
+                    android:textColor="@color/clr_main_text"/>
 
                 <ImageView
-                    android:id="@+id/moments_status"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="50dp"
-                    android:padding="1dp"
-                    android:src="@drawable/selector_common_like"/>
+                    android:id="@+id/img_sex"
+                    style="@style/w_wrap_h_wrap"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/sex_boy"/>
 
+                <TextView
+                    android:id="@+id/tv_created_time"
+                    style="@style/w_wrap_h_wrap"
+                    android:paddingLeft="10dp"
+                    android:text="2017-01-01 00:00:00"
+                    android:textSize="@dimen/dimen_tiny_text_size"/>
 
-            </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/h_weight_w_match"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+
+                <TextView
+                    style="@style/w_wrap_h_wrap"
+                    android:layout_alignParentTop="true"
+                    android:text="来自: "
+                    android:textSize="@dimen/dimen_tiny_text_size"/>
+
+                <ImageView
+                    android:id="@+id/img_location"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/location"/>
+
+                <TextView
+                    android:id="@+id/label_address"
+                    style="@style/w_wrap_h_wrap"
+                    android:layout_marginLeft="2dp"
+                    android:text="中国"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="@dimen/dimen_tiny_text_size"/>
+
+            </LinearLayout>
         </LinearLayout>
-
     </RelativeLayout>
 
-</android.support.v7.widget.CardView>
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="top"
+        android:maxLines="4"
+        android:text="这个是新闻的内容预览"
+        android:textSize="12sp"/>
+
+    <ImageView
+        android:id="@+id/iv_img"
+        style="@style/w_wrap_h_wrap"
+        android:layout_marginRight="8dp"/>
+
+</LinearLayout>

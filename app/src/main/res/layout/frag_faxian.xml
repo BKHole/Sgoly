@@ -13,7 +13,7 @@
 
     <include layout="@layout/tab_title"/>
 
-    <android.support.v4.widget.SwipeRefreshLayout
+    <com.libt.sgoly.view.RefreshLayout
         android:id="@+id/swipe_refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -22,7 +22,7 @@
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-    </android.support.v4.widget.SwipeRefreshLayout>
+    </com.libt.sgoly.view.RefreshLayout>
     </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton

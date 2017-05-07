@@ -54,8 +54,8 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder>{
                 Fruit fruit = mFruitList.get(position);
                 Intent intent = new Intent(mContext, FruitDetailActivity.class);
                 intent.putExtra(FruitDetailActivity.FRUIT_NAME, fruit.getName());
-                intent.putExtra(FruitDetailActivity.FRUIT_IMAGE_ID, fruit.getImageId());
-                //intent.putExtra(FruitDetailActivity.FRUIT_IMAGE_ID, fruit.getPicture().getFileUrl());
+                //intent.putExtra(FruitDetailActivity.FRUIT_IMAGE_ID, fruit.getImageId());
+                intent.putExtra(FruitDetailActivity.FRUIT_IMAGE_ID, fruit.getPicture().getFileUrl());
                 mContext.startActivity(intent);
             }
         });
@@ -66,8 +66,8 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder>{
     public void onBindViewHolder(ViewHolder holder, int position) {
         Fruit fruit = mFruitList.get(position);
         holder.fruitName.setText(fruit.getName());
-        Glide.with(mContext).load(fruit.getImageId()).into(holder.fruitImage);
-        //Glide.with(mContext).load(fruit.getPicture().getFileUrl()).into(holder.fruitImage);
+        //Glide.with(mContext).load(fruit.getImageId()).into(holder.fruitImage);
+        Glide.with(mContext).load(fruit.getPicture().getFileUrl()).into(holder.fruitImage);
     }
 
     @Override

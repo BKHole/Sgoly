@@ -6,10 +6,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.libt.sgoly.R;
@@ -37,12 +40,31 @@ public class FruitFragment extends Fragment {
 
     private FruitAdapter adapter;
     private SwipeRefreshLayout swipeRefresh;
+    private EditText searchContent;
+    private Button searchButton;
+    private String keyWord;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.frag_leyuan, container, false);
         initFruits();
+
+        searchContent= (EditText) view.findViewById(R.id.search_et_input);
+        searchButton= (Button) view.findViewById(R.id.search_btn_back);
+        keyWord=searchContent.getText().toString().trim();
+        Log.d("----------", keyWord);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (TextUtils.isEmpty(keyWord)){
+                    Toast.makeText(getActivity(), "搜索内容不能为空", Toast.LENGTH_SHORT).show();
+                }else{
+                    searchFruit(keyWord);
+                }
+            }
+        });
+
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         GridLayoutManager layoutManager = new GridLayoutManager(this.getActivity(), 2);
         recyclerView.setLayoutManager(layoutManager);
@@ -81,6 +103,27 @@ public class FruitFragment extends Fragment {
     //    });
     //}
 
+    private void searchFruit(String name){
+        fruitList.clear();
+        BmobQuery<Fruit> query = new BmobQuery<>();
+        query.addWhereEqualTo("name",name);
+        query.setLimit(1);
+        query.findObjects(new FindListener<Fruit>() {
+            @Override
+            public void done(List<Fruit> object, BmobException e) {
+                if (e == null) {
+                    for (Fruit fruit : object) {
+                        fruitList.add(fruit);
+                    }
+                    adapter.notifyDataSetChanged();
+                } else {
+                    Log.i("bmob", "失败：" + e.getMessage() + "," + e.getErrorCode());
+                    Toast.makeText(getActivity(), "搜索内容不存在", Toast.LENGTH_SHORT).show();
+                    initFruits();
+                }
+            }
+        });
+    }
     private void refreshFruits() {
         new Thread(new Runnable() {
             @Override
@@ -104,27 +147,27 @@ public class FruitFragment extends Fragment {
 
     private void initFruits() {
         fruitList.clear();
-        for (int i = 0; i < 50; i++) {
-            Random random = new Random();
-            int index = random.nextInt(fruits.length);
-            fruitList.add(fruits[index]);
-        }
-        //BmobQuery<Fruit> query = new BmobQuery<>();
-        ////返回50条数据，如果不加上这条语句，默认返回10条数据
-        //query.setLimit(10);
-        ////执行查询方法
-        //query.findObjects(new FindListener<Fruit>() {
-        //    @Override
-        //    public void done(List<Fruit> object, BmobException e) {
-        //        if (e == null) {
-        //            for (Fruit fruit : object) {
-        //                fruitList.add(fruit);
-        //            }
-        //            adapter.notifyDataSetChanged();
-        //        } else {
-        //            Log.i("bmob", "失败：" + e.getMessage() + "," + e.getErrorCode());
-        //        }
-        //    }
-        //});
+        //for (int i = 0; i < 50; i++) {
+        //    Random random = new Random();
+        //    int index = random.nextInt(fruits.length);
+        //    fruitList.add(fruits[index]);
+        //}
+        BmobQuery<Fruit> query = new BmobQuery<>();
+        //返回50条数据，如果不加上这条语句，默认返回10条数据
+        query.setLimit(10);
+        //执行查询方法
+        query.findObjects(new FindListener<Fruit>() {
+            @Override
+            public void done(List<Fruit> object, BmobException e) {
+                if (e == null) {
+                    for (Fruit fruit : object) {
+                        fruitList.add(fruit);
+                    }
+                    adapter.notifyDataSetChanged();
+                } else {
+                    Log.i("bmob", "失败：" + e.getMessage() + "," + e.getErrorCode());
+                }
+            }
+        });
     }
 }

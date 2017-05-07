@@ -35,10 +35,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.libt.sgoly.AppConstant;
 import com.libt.sgoly.R;
 import com.libt.sgoly.db.Moments;
 import com.libt.sgoly.db.User;
 import com.libt.sgoly.util.ImageCompressHelper;
+import com.libt.sgoly.util.LogUtils;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -125,7 +127,16 @@ public class PublishMomentActivity extends BaseActivity {
             } else if (view == publishMoment) {
                 toPublish();
             } else if (view == imgPlus) {
-
+                if (listImg.size() == 1) {
+                    // 兼容的 Material Design AlertDialog
+                    new AlertDialog.Builder(PublishMomentActivity.this)
+                            .setMessage("图片最多为一张")
+                            // .setCancelable(false) // 设置点击Dialog以外的界面不消失，按返回键也不起作用
+                            .setPositiveButton("确定", null)
+                            .show();
+                    return;
+                }
+                showDialog();
             }
         }
     };
@@ -227,7 +238,7 @@ public class PublishMomentActivity extends BaseActivity {
             case CAMERA_REQUEST_CODE: // 相机数据
                 if (ImageCompressHelper.getInstance().compressIMG(this, tempFileCameraPath) != null) {
                     listImg.add(ImageCompressHelper.getInstance().compressIMG(this, tempFileCameraPath));
-                    // listImg.add(tempFileCameraPath);
+                    //listImg.add(tempFileCameraPath);
                     updateImg();
                 }
                 break;
@@ -272,7 +283,7 @@ public class PublishMomentActivity extends BaseActivity {
         }
         showPublishDialog();
         if (image == null) {
-            //publishWithoutFigure(commitContent, null);
+            publishWithoutFigure(commitContent, null);
         } else {
             publish(commitContent);
         }
@@ -290,9 +301,9 @@ public class PublishMomentActivity extends BaseActivity {
                 // 1.files-上传完成后的BmobFile集合，是为了方便大家对其上传后的数据进行操作，例如你可以将该文件保存到表中
                 // 2.urls-上传文件的完整url地址
                 if (urls.size() == listImg.size()) { // 如果数量相等，则代表文件全部上传完成
-                    // do something
-                    // LogUtils.i("JAVA", "URL:"+urls.toString());
-                    //publishWithoutFigure(commitContent, files);
+                    //do something
+                    LogUtils.i("JAVA", "URL:" + urls.toString());
+                    publishWithoutFigure(commitContent, files);
                 }
             }
 
@@ -311,23 +322,23 @@ public class PublishMomentActivity extends BaseActivity {
         });
     }
 
-    //private void publishWithoutFigure(final String commitContent, final List<BmobFile> files) {
-    //    User userEntity = BmobUser.getCurrentUser(User.class);
-    //    Moments newsEntity = new Moments();
-    //    newsEntity.setAuthor(userEntity);
-    //    newsEntity.setContent(commitContent);
-    //    newsEntity.setImg(files.get(0));
-    //    newsEntity.save(new SaveListener<String>() {
-    //        @Override
-    //        public void done(String s, BmobException e) {
-    //            progressDialog.dismiss();
-    //            // 发布成功
-    //            showToast("发布成功");
-    //            PublishMomentActivity.this.setResult(ConstantUtils.RESULT_UPDATE_INFO, new Intent());
-    //            finish();
-    //        }
-    //    });
-    //}
+    private void publishWithoutFigure(final String commitContent, final List<BmobFile> files) {
+        User userEntity = BmobUser.getCurrentUser(User.class);
+        Moments newsEntity = new Moments();
+        newsEntity.setAuthor(userEntity);
+        newsEntity.setContent(commitContent);
+        newsEntity.setImg(files.get(0));
+        newsEntity.save(new SaveListener<String>() {
+            @Override
+            public void done(String s, BmobException e) {
+                progressDialog.dismiss();
+                // 发布成功
+                showToast("发布成功");
+                PublishMomentActivity.this.setResult(AppConstant.RESULT_UPDATE_INFO, new Intent());
+                finish();
+            }
+        });
+    }
 
     /**
      * 显示发布时的Dialog

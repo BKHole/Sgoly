@@ -7,6 +7,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.libt.sgoly.R;
+import com.libt.sgoly.db.User;
 import com.libt.sgoly.manager.ActivityManager;
 import com.libt.sgoly.manager.UIManager;
 
@@ -73,8 +74,8 @@ public class SettingActivity extends BaseActivity {
             }else if (view==about){
 
             }else if (view==loginOut){
+                User.logOut();
                 ActivityManager.finishAll();
-                //User.logOut();
             }
         }
     };

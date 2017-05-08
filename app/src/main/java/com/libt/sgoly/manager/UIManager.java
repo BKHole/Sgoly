@@ -77,8 +77,10 @@ public class UIManager {
      *
      * @param context
      */
-    public static void showFruitDetail(Context context) {
+    public static void showFruitDetail(Context context, String name, String imgUrl) {
         Intent intent = new Intent(context, FruitDetailActivity.class);
+        intent.putExtra(FruitDetailActivity.FRUIT_NAME, name);
+        intent.putExtra(FruitDetailActivity.FRUIT_IMAGE_ID, imgUrl);
         context.startActivity(intent);
     }
 

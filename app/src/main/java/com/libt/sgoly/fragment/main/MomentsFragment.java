@@ -233,6 +233,7 @@ public class MomentsFragment extends Fragment {
             }
         }).start();
     }
+
     //private void initFruits() {
     //    momentsList.clear();
     //    for (int i = 0; i < momentses.length; i++) {

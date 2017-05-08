@@ -3,7 +3,10 @@ package com.libt.sgoly.activity;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -39,6 +42,9 @@ public class SearchActivity extends BaseActivity {
     private Button btnSearch;
     private ImageView ivDelete;
     private ImageView searchBack;
+    private RecyclerView recyclerView;
+    private SearchAdapter adapter;
+    private List<Fruit> fruitList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +57,8 @@ public class SearchActivity extends BaseActivity {
         etInput = (EditText) findViewById(R.id.search_et_input);
         ivDelete = (ImageView) findViewById(R.id.search_iv_delete);
         btnSearch = (Button) findViewById(R.id.search);
-        searchBack= (ImageView) findViewById(R.id.search_back);
+        searchBack = (ImageView) findViewById(R.id.search_back);
+        recyclerView = (RecyclerView) findViewById(R.id.main_lv_search_results);
 
         ivDelete.setOnClickListener(clickListener);
         btnSearch.setOnClickListener(clickListener);
@@ -62,39 +69,46 @@ public class SearchActivity extends BaseActivity {
         @Override
         public void onClick(View view) {
             if (view == btnSearch) {
-
+                String keyWord = etInput.getText().toString().trim();
+                if (!TextUtils.isEmpty(keyWord)) {
+                    searchFruit(keyWord);
+                } else {
+                    ToastUtils.showToastShort("输入内容不能为空");
+                }
             } else if (view == ivDelete) {
 
-            }else if (view== searchBack){
+            } else if (view == searchBack) {
                 onBackPressed();
             }
 
         }
     };
 
-    //private void initMoments() {
-    //    //for (int i = 0; i < 50; i++) {
-    //    //    Random random = new Random();
-    //    //    int index = random.nextInt(fruits.length);
-    //    //    fruitList.add(fruits[index]);
-    //    //}
-    //    BmobQuery<Fruit> query = new BmobQuery<>();
-    //    //返回50条数据，如果不加上这条语句，默认返回10条数据
-    //    query.setLimit(10);
-    //    //执行查询方法
-    //    query.findObjects(new FindListener<Fruit>() {
-    //        @Override
-    //        public void done(List<Fruit> object, BmobException e) {
-    //            if (e == null) {
-    //                for (Fruit fruit : object) {
-    //                    fruitList.add(fruit);
-    //                }
-    //                adapter.notifyDataSetChanged();
-    //            } else {
-    //                Log.i("bmob", "失败：" + e.getMessage() + "," + e.getErrorCode());
-    //            }
-    //        }
-    //    });
-    //}
+    private void searchFruit(String name) {
+        fruitList.clear();
+        BmobQuery<Fruit> query = new BmobQuery<>();
+        query.addWhereEqualTo("englishName", name);
+        //执行查询方法
+        query.findObjects(new FindListener<Fruit>() {
+            @Override
+            public void done(List<Fruit> object, BmobException e) {
+                if (e == null) {
+                    for (Fruit fruit : object) {
+                        fruitList.add(fruit);
+                    }
+                    adapter.notifyDataSetChanged();
+                } else {
+                    ToastUtils.showToastShort("查询内容不存在");
+                    Log.i("bmob", "失败：" + e.getMessage() + "," + e.getErrorCode());
+                }
+            }
+        });
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.addItemDecoration(new DividerItemDecoration(
+                this, DividerItemDecoration.VERTICAL));//添加分割线
+        adapter=new SearchAdapter(fruitList);
+        recyclerView.setAdapter(adapter);
+    }
 
 }

@@ -88,11 +88,11 @@ public class MomentsAdapter extends RecyclerView.Adapter<MomentsAdapter.ViewHold
         } else {
             holder.author.setText(moment.getAuthor().getUsername());
         }
-        //if (moment.getAuthor().getSex()){
-        //    holder.sex.setImageResource(R.drawable.sex_boy);
-        //}else{
-        //    holder.sex.setImageResource(R.drawable.sex_girl);
-        //}
+        if (moment.getAuthor().isSex()){
+            holder.sex.setImageResource(R.drawable.sex_boy);
+        }else{
+            holder.sex.setImageResource(R.drawable.sex_girl);
+        }
         if (moment.getImg() != null) {
             holder.img.setVisibility(View.VISIBLE);
             Glide.with(mContext).load(moment.getImg().getFileUrl()).into(holder.img);

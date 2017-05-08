@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.libt.sgoly.R;
 import com.libt.sgoly.activity.FruitDetailActivity;
 import com.libt.sgoly.db.Fruit;
+import com.libt.sgoly.manager.UIManager;
 
 import java.util.List;
 
@@ -52,11 +53,7 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder>{
             public void onClick(View v) {
                 int position = holder.getAdapterPosition();
                 Fruit fruit = mFruitList.get(position);
-                Intent intent = new Intent(mContext, FruitDetailActivity.class);
-                intent.putExtra(FruitDetailActivity.FRUIT_NAME, fruit.getName());
-                //intent.putExtra(FruitDetailActivity.FRUIT_IMAGE_ID, fruit.getImageId());
-                intent.putExtra(FruitDetailActivity.FRUIT_IMAGE_ID, fruit.getPicture().getFileUrl());
-                mContext.startActivity(intent);
+                UIManager.showFruitDetail(mContext,fruit.getName(),fruit.getPicture().getFileUrl());
             }
         });
         return holder;

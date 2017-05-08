@@ -75,4 +75,9 @@
     <color name="clr_main_text">#000000</color>
     <color name="clr_sub_text">#b4af96</color>
     <color name="clr_form_line">#80808069</color>
+
+    <color name="myred">#eb4f38</color>
+    <color name="darkgray">#cccc</color>
+    <color name="btn_press_color">#5677fc</color>
+    <color name="btn_pressed_color">#3ca0ec</color>
 </resources>

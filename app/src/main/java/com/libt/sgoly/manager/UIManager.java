@@ -8,9 +8,11 @@ import com.libt.sgoly.activity.FruitDetailActivity;
 import com.libt.sgoly.activity.LoginActivity;
 import com.libt.sgoly.activity.MainActivity;
 import com.libt.sgoly.activity.ModifyPasswordActivity;
+import com.libt.sgoly.activity.ModifyPersonalInfo;
 import com.libt.sgoly.activity.PersonInfoActivity;
 import com.libt.sgoly.activity.PublishMomentActivity;
 import com.libt.sgoly.activity.RegisterActivity;
+import com.libt.sgoly.activity.SearchActivity;
 import com.libt.sgoly.activity.SettingActivity;
 
 /**
@@ -107,6 +109,25 @@ public class UIManager {
      */
     public static void showModifyPassword(Context context) {
         Intent intent = new Intent(context, ModifyPasswordActivity.class);
+        context.startActivity(intent);
+    }
+    /**
+     * 显示搜索
+     *
+     * @param context
+     */
+    public static void showSearch(Context context) {
+        Intent intent = new Intent(context, SearchActivity.class);
+        context.startActivity(intent);
+    }
+    /**
+     * 显示修改个人信息
+     *
+     * @param context
+     */
+    public static void showModifyPersonalInfo(Context context, String data) {
+        Intent intent = new Intent(context, ModifyPersonalInfo.class);
+        intent.putExtra("type", data);
         context.startActivity(intent);
     }
 }

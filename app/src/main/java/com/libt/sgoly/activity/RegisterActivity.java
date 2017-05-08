@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import com.libt.sgoly.R;
 import com.libt.sgoly.db.User;
 import com.libt.sgoly.manager.UIManager;
+import com.libt.sgoly.util.NetUtil;
+import com.libt.sgoly.util.ToastUtils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -71,6 +73,11 @@ public class RegisterActivity extends BaseActivity {
             return;
         }
 
+        boolean isNetConnected = NetUtil.isNetworkAvailable(this);
+        if(!isNetConnected){
+            ToastUtils.showToastShort("没有网络连接");
+            return;
+        }
         Pattern pattern = Pattern.compile(reg);
         Matcher matcher = pattern.matcher(password);
         if(!matcher.matches()){

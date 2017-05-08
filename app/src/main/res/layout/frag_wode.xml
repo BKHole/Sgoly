@@ -18,15 +18,14 @@
             android:layout_height="wrap_content"
             android:paddingBottom="20dp">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/mine_avatar"
-                android:layout_width="86dp"
-                android:layout_height="86dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:padding="1dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/object"/>
+                android:src="@drawable/default_avatar"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -43,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_marginTop="20dp"
-                    android:text="贾克斯"
+                    android:text="未登录"
                     android:textColor="@color/black"
                     android:textSize="13sp"/>
 
@@ -52,7 +51,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:text="相信明天"
+                    android:text="太懒了，什么都没有留下"
                     android:textSize="13sp"/>
             </LinearLayout>
 

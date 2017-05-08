@@ -1,10 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
-    <include layout="@layout/tab_title_search"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@drawable/shape_title">
+
+        <ImageView
+            android:id="@+id/app_icon"
+            style="@style/titlebar_img"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="8dp"
+            android:contentDescription="@null"
+            android:src="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_toRightOf="@+id/app_icon"
+            android:maxLines="1"
+            android:text="水果乐园"
+            android:textSize="16sp"
+            android:textColor="@color/normal_font"/>
+
+        <ImageView
+            android:id="@+id/img_search"
+            style="@style/titlebar_img"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:contentDescription="@null"
+            android:src="@drawable/selector_titlebar_search"/>
+    </RelativeLayout>
+
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh"
         android:layout_width="match_parent"
@@ -14,7 +49,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"/>
     </android.support.v4.widget.SwipeRefreshLayout>
 
 </LinearLayout>

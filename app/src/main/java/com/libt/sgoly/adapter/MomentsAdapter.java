@@ -36,7 +36,7 @@ public class MomentsAdapter extends RecyclerView.Adapter<MomentsAdapter.ViewHold
 
         public ViewHolder(View view) {
             super(view);
-            avatar = (CircleImageView) view.findViewById(R.id.iv_avatar);
+            avatar = (CircleImageView) view.findViewById(R.id.avatar);
             author = (TextView) view.findViewById(R.id.tv_author);
             sex= (ImageView) view.findViewById(R.id.img_sex);
             location= (TextView) view.findViewById(R.id.label_address);

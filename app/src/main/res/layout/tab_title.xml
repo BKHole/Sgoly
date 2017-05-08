@@ -24,7 +24,7 @@
         android:layout_centerInParent="true"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
-        android:singleLine="true"
+        android:maxLines="1"
         android:textColor="@color/topic_red"
         android:visibility="gone"/>
 

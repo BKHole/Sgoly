@@ -55,8 +55,15 @@
             android:name=".activity.PersonInfoActivity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".activity.ModifyPasswordActivity"
-                  android:screenOrientation="portrait">
+        <activity
+            android:name=".activity.ModifyPasswordActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".activity.SearchActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".activity.ModifyPersonalInfo">
         </activity>
     </application>
 

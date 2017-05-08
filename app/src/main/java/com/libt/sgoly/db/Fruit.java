@@ -11,6 +11,7 @@ import cn.bmob.v3.datatype.BmobFile;
 
 public class Fruit extends BmobObject {
     private String name;
+    private String englishName;
     private BmobFile picture;
 
     public BmobFile getPicture() {
@@ -26,6 +27,13 @@ public class Fruit extends BmobObject {
         this.imageId = imageId;
     }
 
+    public String getEnglishName() {
+        return englishName;
+    }
+
+    public void setEnglishName(String englishName) {
+        this.englishName = englishName;
+    }
     public String getName() {
         return name;
     }

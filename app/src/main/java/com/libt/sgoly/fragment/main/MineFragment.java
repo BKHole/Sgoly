@@ -7,12 +7,16 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.libt.sgoly.R;
+import com.libt.sgoly.db.User;
 import com.libt.sgoly.manager.UIManager;
+
+import cn.bmob.v3.BmobUser;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class MineFragment extends Fragment {
@@ -24,7 +28,7 @@ public class MineFragment extends Fragment {
     private TextView title;
     private TextView nickname;
     private TextView motto;
-    private ImageView avatar;
+    private CircleImageView avatar;
 
     @Nullable
     @Override
@@ -39,7 +43,7 @@ public class MineFragment extends Fragment {
         setting = (LinearLayout) view.findViewById(R.id.mine_setting);
         nickname = (TextView) view.findViewById(R.id.mine_nickname);
         motto = (TextView) view.findViewById(R.id.mine_motto);
-        avatar = (ImageView) view.findViewById(R.id.mine_avatar);
+        avatar = (CircleImageView) view.findViewById(R.id.mine_avatar);
 
         personalInfo.setOnClickListener(clickListener);
         collection.setOnClickListener(clickListener);
@@ -47,6 +51,25 @@ public class MineFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if (User.getCurrentUser()!=null) {
+            initView();
+        }
+    }
+
+    public void initView() {
+        if (BmobUser.getCurrentUser()!=null) {
+            User User = BmobUser.getCurrentUser(User.class);
+            if (User.getAvatar()!=null) {
+                Glide.with(getActivity()).load(User.getAvatar().getFileUrl()).into(avatar);
+            }
+            nickname.setText(User.getNickname());
+            motto.setText(User.getMotto());
+        }
+    }
+    
     View.OnClickListener clickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -59,5 +82,6 @@ public class MineFragment extends Fragment {
             }
         }
     };
+
 
 }

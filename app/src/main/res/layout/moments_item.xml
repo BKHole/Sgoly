@@ -13,7 +13,7 @@
         android:paddingBottom="3dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/iv_avatar"
+            android:id="@+id/avatar"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_alignParentLeft="true"
@@ -21,7 +21,7 @@
 
         <LinearLayout
             style="@style/w_match_h_match"
-            android:layout_toRightOf="@+id/iv_avatar"
+            android:layout_toRightOf="@+id/avatar"
             android:orientation="vertical"
             android:paddingLeft="10dp">
 

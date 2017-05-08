@@ -13,11 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.libt.sgoly.R;
 import com.libt.sgoly.adapter.FruitAdapter;
 import com.libt.sgoly.db.Fruit;
+import com.libt.sgoly.manager.UIManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,9 +42,7 @@ public class FruitFragment extends Fragment {
 
     private FruitAdapter adapter;
     private SwipeRefreshLayout swipeRefresh;
-    private EditText searchContent;
-    private Button searchButton;
-    private String keyWord;
+    private ImageView searchButton;
 
     @Nullable
     @Override
@@ -50,21 +50,13 @@ public class FruitFragment extends Fragment {
         view = inflater.inflate(R.layout.frag_leyuan, container, false);
         initFruits();
 
-        searchContent= (EditText) view.findViewById(R.id.search_et_input);
-        searchButton= (Button) view.findViewById(R.id.search_btn_back);
-        keyWord=searchContent.getText().toString().trim();
-        Log.d("----------", keyWord);
+        searchButton= (ImageView) view.findViewById(R.id.img_search);
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (TextUtils.isEmpty(keyWord)){
-                    Toast.makeText(getActivity(), "搜索内容不能为空", Toast.LENGTH_SHORT).show();
-                }else{
-                    searchFruit(keyWord);
-                }
+                UIManager.showSearch(getActivity());
             }
         });
-
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         GridLayoutManager layoutManager = new GridLayoutManager(this.getActivity(), 2);
         recyclerView.setLayoutManager(layoutManager);
@@ -103,27 +95,6 @@ public class FruitFragment extends Fragment {
     //    });
     //}
 
-    private void searchFruit(String name){
-        fruitList.clear();
-        BmobQuery<Fruit> query = new BmobQuery<>();
-        query.addWhereEqualTo("name",name);
-        query.setLimit(1);
-        query.findObjects(new FindListener<Fruit>() {
-            @Override
-            public void done(List<Fruit> object, BmobException e) {
-                if (e == null) {
-                    for (Fruit fruit : object) {
-                        fruitList.add(fruit);
-                    }
-                    adapter.notifyDataSetChanged();
-                } else {
-                    Log.i("bmob", "失败：" + e.getMessage() + "," + e.getErrorCode());
-                    Toast.makeText(getActivity(), "搜索内容不存在", Toast.LENGTH_SHORT).show();
-                    initFruits();
-                }
-            }
-        });
-    }
     private void refreshFruits() {
         new Thread(new Runnable() {
             @Override

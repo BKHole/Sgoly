@@ -16,7 +16,7 @@
         android:orientation="vertical">
 
         <RelativeLayout
-            android:id="@+id/setting_editinfo"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -31,19 +31,22 @@
                 android:textColor="#333333"
                 android:textSize="14sp"/>
 
-            <ImageView
-                android:layout_width="86dp"
-                android:layout_height="86dp"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/setting_avatar"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:scaleType="centerInside"
-                android:src="@drawable/object"/>
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/default_avatar"/>
         </RelativeLayout>
 
         <View style="@style/line"/>
 
         <RelativeLayout
-            android:id="@+id/setting_modify_password"
+
             style="@style/setting_layout">
 
             <TextView
@@ -51,27 +54,31 @@
                 android:text="昵称"/>
 
             <TextView
+                android:id="@+id/setting_nickname"
                 style="@style/profile_text_right"
-                android:text="哈哈"/>
+                android:text="未登录"/>
         </RelativeLayout>
 
         <View style="@style/line"/>
 
         <RelativeLayout
+
             style="@style/setting_layout">
 
             <TextView
                 style="@style/profile_text_left"
-                android:text="生日"/>
+                android:text="年龄"/>
 
             <TextView
+                android:id="@+id/setting_birth"
                 style="@style/profile_text_right"
-                android:text="哈哈"/>
+                android:text="未登录"/>
         </RelativeLayout>
 
         <View style="@style/line"/>
 
         <RelativeLayout
+
             style="@style/setting_layout">
 
             <TextView
@@ -79,8 +86,9 @@
                 android:text="我的地址"/>
 
             <TextView
+                android:id="@+id/setting_address"
                 style="@style/profile_text_right"
-                android:text="哈哈"/>
+                android:text="未登录"/>
         </RelativeLayout>
     </LinearLayout>
 
@@ -93,6 +101,7 @@
         android:orientation="vertical">
 
         <RelativeLayout
+
             style="@style/setting_layout">
 
             <TextView
@@ -100,13 +109,15 @@
                 android:text="性别"/>
 
             <TextView
+                android:id="@+id/setting_sex"
                 style="@style/profile_text_right"
-                android:text="哈哈"/>
+                android:text="男"/>
         </RelativeLayout>
 
         <View style="@style/line"/>
 
         <RelativeLayout
+
             style="@style/setting_layout">
 
             <TextView
@@ -114,13 +125,15 @@
                 android:text="地区"/>
 
             <TextView
+                android:id="@+id/setting_region"
                 style="@style/profile_text_right"
-                android:text="哈哈"/>
+                android:text=""/>
         </RelativeLayout>
 
         <View style="@style/line"/>
 
         <RelativeLayout
+
             style="@style/setting_layout">
 
             <TextView
@@ -128,8 +141,9 @@
                 android:text="个性签名"/>
 
             <TextView
+                android:id="@+id/setting_motto"
                 style="@style/profile_text_right"
-                android:text="哈哈"/>
+                android:text="太懒了，什么都没有留下"/>
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

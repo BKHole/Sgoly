@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/mine_gray"
     android:fitsSystemWindows="true">
 
     <LinearLayout
@@ -15,6 +16,8 @@
 
     <com.libt.sgoly.view.RefreshLayout
         android:id="@+id/swipe_refresh"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

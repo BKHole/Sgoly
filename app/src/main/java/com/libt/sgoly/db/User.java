@@ -12,9 +12,10 @@ public class User extends BmobUser {
 
     private String nickname;//昵称
     private BmobFile avatar;//头像
-    private Boolean sex;//性别
+    private boolean sex;//性别
     private String birth;//生日
     private String motto;//个性签名
+    private String region;//地区
     private String address;//地址
 
     public String getNickname() {
@@ -25,7 +26,7 @@ public class User extends BmobUser {
         this.nickname = nickname;
     }
 
-    public Boolean getSex() {
+    public boolean isSex() {
         return sex;
     }
 

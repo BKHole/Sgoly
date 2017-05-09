@@ -53,7 +53,7 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder>{
             public void onClick(View v) {
                 int position = holder.getAdapterPosition();
                 Fruit fruit = mFruitList.get(position);
-                UIManager.showFruitDetail(mContext,fruit.getName(),fruit.getPicture().getFileUrl());
+                UIManager.showFruitDetail(mContext,fruit);
             }
         });
         return holder;
@@ -63,7 +63,6 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder>{
     public void onBindViewHolder(ViewHolder holder, int position) {
         Fruit fruit = mFruitList.get(position);
         holder.fruitName.setText(fruit.getName());
-        //Glide.with(mContext).load(fruit.getImageId()).into(holder.fruitImage);
         Glide.with(mContext).load(fruit.getPicture().getFileUrl()).into(holder.fruitImage);
     }
 

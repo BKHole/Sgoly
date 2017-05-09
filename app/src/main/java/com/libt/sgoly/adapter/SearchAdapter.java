@@ -51,7 +51,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
             public void onClick(View v) {
                 int position = holder.getAdapterPosition();
                 Fruit fruit = mFruitList.get(position);
-                UIManager.showFruitDetail(mContext,fruit.getName(),fruit.getPicture().getFileUrl());
+                UIManager.showFruitDetail(mContext,fruit);
             }
         });
         return holder;
@@ -61,7 +61,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     public void onBindViewHolder(ViewHolder holder, int position) {
         Fruit fruit = mFruitList.get(position);
         holder.fruitName.setText(fruit.getName());
-        ToastUtils.showToastShort(fruit.getEnglishName());
         Glide.with(mContext).load(fruit.getPicture().getFileUrl()).into(holder.fruitImage);
     }
 

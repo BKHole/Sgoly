@@ -165,13 +165,14 @@
                 app:cardCornerRadius="4dp">
 
                 <TextView
+                    android:id="@+id/fruit_content_question"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="早上空腹吃苹果好吗"
                     android:textStyle="bold"/>
 
                 <TextView
-                    android:id="@+id/fruit_content_question"
+                    android:id="@+id/fruit_content_answer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"

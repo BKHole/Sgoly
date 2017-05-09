@@ -125,7 +125,7 @@ public class FruitFragment extends Fragment {
         //}
         BmobQuery<Fruit> query = new BmobQuery<>();
         //返回50条数据，如果不加上这条语句，默认返回10条数据
-        query.setLimit(10);
+        query.setLimit(50);
         //执行查询方法
         query.findObjects(new FindListener<Fruit>() {
             @Override

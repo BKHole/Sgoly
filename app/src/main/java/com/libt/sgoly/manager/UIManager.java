@@ -2,6 +2,7 @@ package com.libt.sgoly.manager;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 
 import com.libt.sgoly.activity.CollectionActivity;
 import com.libt.sgoly.activity.FruitDetailActivity;
@@ -14,6 +15,10 @@ import com.libt.sgoly.activity.PublishMomentActivity;
 import com.libt.sgoly.activity.RegisterActivity;
 import com.libt.sgoly.activity.SearchActivity;
 import com.libt.sgoly.activity.SettingActivity;
+import com.libt.sgoly.db.Fruit;
+import com.libt.sgoly.db.User;
+
+import static android.R.attr.name;
 
 /**
  * 管理activity跳转
@@ -77,10 +82,11 @@ public class UIManager {
      *
      * @param context
      */
-    public static void showFruitDetail(Context context, String name, String imgUrl) {
+    public static void showFruitDetail(Context context, Fruit fruit) {
         Intent intent = new Intent(context, FruitDetailActivity.class);
-        intent.putExtra(FruitDetailActivity.FRUIT_NAME, name);
-        intent.putExtra(FruitDetailActivity.FRUIT_IMAGE_ID, imgUrl);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("fruit", fruit);
+        intent.putExtras(bundle);
         context.startActivity(intent);
     }
 
